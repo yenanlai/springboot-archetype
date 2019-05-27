@@ -7,10 +7,10 @@
 - Swagger
 - Feign
 - Eureka
+- Guava Loading Cache缓存
 - Mybatis通用Mapper
 - Mybatis Generator自动生成代码插件
 - PageHelper分页插件
-- LoadingCache缓存
 - HTTP Request日志打印
 - Date工具类
 
