@@ -5,9 +5,10 @@
 - 统一异常处理
 - 返回结果语言国际化
 - Swagger
-- Feign
-- Eureka
-- Guava Loading Cache缓存
+- Spring Cloud Feign
+- Spring Cloud Eureka
+- Spring Cloud Config
+- Guava Loading Cache
 - Mybatis通用Mapper
 - Mybatis Generator自动生成代码插件
 - PageHelper分页插件
