@@ -9,8 +9,6 @@ SpringBoot项目骨架
 - 返回结果语言国际化
 - LoadingCache缓存
 
----
-
 拓展:
 - Redis
 - Kafka
