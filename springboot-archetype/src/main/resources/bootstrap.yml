@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: springboot-archetype
+  cloud:
+    config:
+      uri: ${config-server.name}
+      label: master
+      profile: ${spring.profiles.active}
+  profiles:
+    active: local
+
+server:
+  port: 2222
+  servlet:
+    context-path: /archetype
+
+---
+
+spring:
+  profiles: local
+config-server:
+  name: http://localhost
+
+---
+
+spring:
+  profiles: development
+config-server:
+  name: http://localhost
+
+---
+
+spring:
+  profiles: production
+config-server:
+  name: http://localhost
