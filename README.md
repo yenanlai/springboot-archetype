@@ -30,3 +30,13 @@
 
 1. 项目启动，默认spring.profiles.active=local
 2. 访问 http://localhost:2222/archetype/swagger-ui.html
+
+# 构建Maven Archetype
+
+Maven Deploy to Nexus:
+
+- cd springboot-archetype
+- mvn clean archetype:create-from-project
+- cp ../pom_demo.xml target/generated-sources/archetype/pom.xml
+- cd target/generated-sources/archetype/
+- mvn -s YourSettings.xml clean deploy -U
