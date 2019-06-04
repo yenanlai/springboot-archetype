@@ -24,7 +24,7 @@
 - mv _gitignore .gitignore
 - 重构package name
 
-# 测试
+# Run
 
 1. 项目启动，默认spring.profiles.active=local
 2. 访问 http://localhost:2222/archetype/swagger-ui.html
