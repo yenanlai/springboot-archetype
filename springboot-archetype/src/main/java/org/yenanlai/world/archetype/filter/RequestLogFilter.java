@@ -16,6 +16,9 @@ import org.springframework.web.util.WebUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * HTTP Request日志采集
+ */
 @Slf4j
 @Component
 public class RequestLogFilter extends OncePerRequestFilter implements Ordered {
@@ -37,10 +40,9 @@ public class RequestLogFilter extends OncePerRequestFilter implements Ordered {
         long end = System.currentTimeMillis();
         long cost = end - begin;
         log.info(
-                "method: {}, path: {}, Accept-Language: {}, Locale-Language: {}, status: {}, query: {}, body: {}, cost: {}ms",
-                request.getMethod(), request.getRequestURI(), request.getHeader("Accept-Language"),
-                request.getLocale().getLanguage(), response.getStatus(), request.getQueryString(),
-                body, cost);
+                "method: {}, status: {}, path: {}, Locale-Language: {}, query: {}, body: {}, cost: {}ms",
+                request.getMethod(), response.getStatus(), request.getRequestURI(),
+                request.getLocale().getLanguage(), request.getQueryString(), body, cost);
 
     }
 

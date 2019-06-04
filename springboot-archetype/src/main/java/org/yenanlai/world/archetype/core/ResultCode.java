@@ -1,5 +1,8 @@
 package org.yenanlai.world.archetype.core;
 
+/**
+ * 返回结果枚举
+ */
 public enum ResultCode implements BusinessErrorInterface {
     SUCCESS(0, "ok"), //
     FAIL(1, "fail"), //

@@ -6,8 +6,10 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.util.StringUtils;
 
+/**
+ * 国际化类
+ */
 public class MessageSources implements MessageSource {
 
     private MessageSource messageSource;
@@ -54,11 +56,6 @@ public class MessageSources implements MessageSource {
     public String getMessage(MessageSourceResolvable resolvable, Locale locale)
             throws NoSuchMessageException {
         return this.messageSource.getMessage(resolvable, locale);
-    }
-
-    public boolean hasCode(String code) {
-        if (StringUtils.isEmpty(code)) return false;
-        return !code.equals(get(code));
     }
 
 }

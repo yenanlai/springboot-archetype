@@ -1,6 +1,7 @@
 package org.yenanlai.world.archetype.core;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,11 +10,14 @@ import org.yenanlai.world.archetype.i18n.MessageSources;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 统一异常处理 - 到达API请求后
+ */
 @Slf4j
 @RestControllerAdvice
 public class ErrorHandler {
 
-    @Autowired
+    @Resource
     private MessageSources messageSources;
 
     @ExceptionHandler(Throwable.class)

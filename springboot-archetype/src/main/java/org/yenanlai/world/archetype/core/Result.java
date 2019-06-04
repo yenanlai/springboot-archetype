@@ -2,6 +2,9 @@ package org.yenanlai.world.archetype.core;
 
 import lombok.Data;
 
+/**
+ * 统一返回结果
+ */
 @Data
 public class Result<T> {
 

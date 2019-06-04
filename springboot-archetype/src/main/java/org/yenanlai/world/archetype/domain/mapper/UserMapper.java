@@ -1,9 +1,12 @@
 package org.yenanlai.world.archetype.domain.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.yenanlai.world.archetype.core.BasicMapper;
-import org.yenanlai.world.archetype.domain.model.User;
+import org.yenanlai.world.archetype.domain.entity.User;
 
-@Mapper
-public interface UserMapper extends BasicMapper<User> {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+/**
+ * Mapper示例
+ */
+public interface UserMapper extends BaseMapper<User> {
+
 }

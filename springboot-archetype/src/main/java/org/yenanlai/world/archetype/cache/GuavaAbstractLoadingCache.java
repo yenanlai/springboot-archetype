@@ -24,7 +24,7 @@ public abstract class GuavaAbstractLoadingCache<K, V> {
 
     private LoadingCache<K, V> cache;
 
-    public LoadingCache<K, V> getCache() {
+    private LoadingCache<K, V> getCache() {
         if (cache == null) {
             synchronized (this) {
                 if (cache == null) {

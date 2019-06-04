@@ -8,6 +8,9 @@ import org.yenanlai.world.archetype.service.client.DemoClient;
 
 import io.swagger.annotations.Api;
 
+/**
+ * Feign测试示例
+ */
 @Api(tags = "测试", description = "information about test")
 @RestController
 public class HomeController {

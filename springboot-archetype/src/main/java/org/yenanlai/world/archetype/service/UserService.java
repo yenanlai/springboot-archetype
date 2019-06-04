@@ -1,10 +1,12 @@
 package org.yenanlai.world.archetype.service;
 
-import java.util.List;
+import org.yenanlai.world.archetype.domain.entity.User;
 
-import org.yenanlai.world.archetype.domain.model.User;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface UserService {
+/**
+ * Service示例
+ */
+public interface UserService extends IService<User> {
 
-    List<User> get(int pageNum, int pageSize);
 }

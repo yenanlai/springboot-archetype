@@ -15,6 +15,9 @@ import org.yenanlai.world.archetype.i18n.MessageSources;
 import lombok.extern.slf4j.Slf4j;
 import springfox.documentation.annotations.ApiIgnore;
 
+/**
+ * 统一异常处理 - 到达API请求前
+ */
 @ApiIgnore
 @Slf4j
 @RestController

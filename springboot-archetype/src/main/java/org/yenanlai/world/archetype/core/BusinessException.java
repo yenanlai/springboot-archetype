@@ -1,5 +1,8 @@
 package org.yenanlai.world.archetype.core;
 
+/**
+ * 自定义异常
+ */
 public class BusinessException extends RuntimeException {
 
     private BusinessErrorInterface businessErrorInterface;

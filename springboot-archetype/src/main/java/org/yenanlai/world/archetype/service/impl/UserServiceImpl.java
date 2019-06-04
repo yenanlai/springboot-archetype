@@ -1,28 +1,16 @@
 package org.yenanlai.world.archetype.service.impl;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
+import org.yenanlai.world.archetype.domain.entity.User;
 import org.yenanlai.world.archetype.domain.mapper.UserMapper;
-import org.yenanlai.world.archetype.domain.model.User;
 import org.yenanlai.world.archetype.service.UserService;
 
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
+/**
+ * ServiceImpl示例
+ */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-    @Resource
-    private UserMapper userMapper;
-
-    @Override
-    public List<User> get(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        return userMapper.selectAll();
-    }
 }
