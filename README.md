@@ -3,22 +3,20 @@
 基础:
 - 统一响应结果
 - 统一异常处理
-- 返回结果语言国际化
+- 返回结果消息国际化
+- Guava
 - Swagger
+- Mybatis-Plus
 - Spring Cloud Feign
 - Spring Cloud Eureka
 - Spring Cloud Config
-- Guava Loading Cache
-- Mybatis通用Mapper
-- Mybatis Generator自动生成代码插件
-- PageHelper分页插件
-- HTTP Request日志打印
-- Date工具类
+- HTTP Request日志采集
+- 日期工具类
 
 测试:
 - H2数据库
 
-拓展:
+待拓展:
 - Redis
 - Kafka
 
