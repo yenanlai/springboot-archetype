@@ -1,7 +1,9 @@
 package org.yenanlai.world.archetype.utils;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.springframework.util.ObjectUtils;
@@ -14,24 +16,57 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DateUtils {
 
-    public static String dateHandler(Date date) {
+    private static final String DatePattern = "yyyy-MM-dd";
+    private static final String DateTimePattern = "yyyy-MM-dd HH:mm:ss";
+
+    /**
+     * Date to Localdate/LocalDateTime
+     */
+    public static LocalDate getLocalDate(Date date) {
         if (ObjectUtils.isEmpty(date)) return null;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        return simpleDateFormat.format(date);
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
-    public static String datetimeHandler(Date date) {
+    public static LocalDateTime getLocalDateTime(Date date) {
         if (ObjectUtils.isEmpty(date)) return null;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return simpleDateFormat.format(date);
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
     }
 
-    public static Date getDate(Date date, int day) {
-        if (ObjectUtils.isEmpty(date)) return null;
-        Calendar now = Calendar.getInstance();
-        now.setTime(date);
-        now.set(Calendar.DATE, now.get(Calendar.DATE) + day);
-        return now.getTime();
+    /**
+     * String to Localdate/LocalDateTime
+     */
+    public static LocalDate getLocalDate(String s) {
+        if (ObjectUtils.isEmpty(s)) return null;
+        return LocalDate.parse(s, DateTimeFormatter.ofPattern(DatePattern));
+    }
+
+    public static LocalDateTime getLocalDateTime(String s) {
+        if (ObjectUtils.isEmpty(s)) return null;
+        return LocalDateTime.parse(s, DateTimeFormatter.ofPattern(DateTimePattern));
+    }
+
+    /**
+     * Localdate/LocalDateTime to String
+     */
+    public static String getDatePattern(LocalDate localDate) {
+        if (ObjectUtils.isEmpty(localDate)) return null;
+        return localDate.format(DateTimeFormatter.ofPattern(DatePattern));
+    }
+
+    public static String getDateTimePattern(LocalDateTime localDateTime) {
+        if (ObjectUtils.isEmpty(localDateTime)) return null;
+        return localDateTime.format(DateTimeFormatter.ofPattern(DateTimePattern));
+    }
+
+    /**
+     * Date to String
+     */
+    public static String getDatePattern(Date date) {
+        return getDatePattern(getLocalDate(date));
+    }
+
+    public static String getDateTimePattern(Date date) {
+        return getDateTimePattern(getLocalDateTime(date));
     }
 
 }
